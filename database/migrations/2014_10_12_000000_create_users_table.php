@@ -13,7 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create(/**
+         * @param Blueprint $table
+         */
+            'users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('row_id')->index()->unsigned()->nullable();
             $table->integer('is_active')->default(0);
@@ -28,7 +31,7 @@ class CreateUsersTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
+
      * @return void
      */
     public function down()
